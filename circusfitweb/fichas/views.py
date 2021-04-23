@@ -12,6 +12,10 @@ def index(request):
     context = {'todas_modalidades_list': todas_modalidades_list}
     return render(request, 'fichas/index.html', context)
 
+def modalidades(request):
+    todas_modalidades_list = Modalidade.objects.order_by('modalidade_pub_date')[:]
+    context = {'todas_modalidades_list': todas_modalidades_list}
+    return render(request, 'fichas/modalidades.html', context)
 
 # def modalidade(request, modalidade_id):
 #     return HttpResponse(f"Aqui vamos detalhar a modalidade {modalidade_id}")

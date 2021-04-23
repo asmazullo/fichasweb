@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Controle de Fichas</title>
-</head>
-<body>
-<h1>Lista de Modalidades:</h1>
-<br>
-{% if todas_modalidades_list %}
-    <ul>
-    {% for modalidade in todas_modalidades_list %}
-        <li><a href="/fichas/{{ modalidade.id }}/modalidade">{{ modalidade.modalidade_nome }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Nenhuma Modalidade Cadastrada.</p>
-{% endif %}
-</body>
-</html>
+{% extends "fichas\base.html" %}
+
+{% block containerprincipal%}
+
+<div>
+    <br>
+    <p align="center" fontsize="13"><h1>Bem vindo ao controla de fichas da CircusFit</h1></p>
+    <br>
+</div>
+
+{% endblock %}

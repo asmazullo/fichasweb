@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sistema de Conrtrole de Fichas de Alunos">
+    <meta charset="UTF-8">
+    <title>Controle de Fichas CircusFit</title>
+
+</head>
+<body>
+
+<div class="pure-menu pure-menu-horizontal" align="center">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="{% url 'homefichas' %}" class="pure-menu-link">Início</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="{% url 'modalidades' %}" class="pure-menu-link">Modalidades</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Níveis</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Blocos</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Movimentos</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Alunos</a>
+        </li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Impressão</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Ficha em Branco</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Ficha de Aluno</a>
+                </li>
+            </ul>
+        </li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Lançamentos</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Por Aluno</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Em massa</a>
+                </li>
+            </ul>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Contato</a>
+        </li>
+    </ul>
+<hr>
+    <div class="pure-g">
+      <div class="pure-u-1"><p align="left">{% block containerprincipal %} {% endblock%}</p></div>
+    </div>
+<hr>
+    <div class="pure-g">
+      <div class="pure-u-1-3"><p align="center">Rodapé 1</p></div>
+      <div class="pure-u-1-3"><p align="center">Powered by: Alex Mazullo - asmazullo@gmail.com</p></div>
+      <div class="pure-u-1-3"><p align="center">Rodapé 3</p></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "fichas\base.html" %}
+
+{% block containerprincipal%}
+
+{% if todas_modalidades_list %}
+    <ul>
+    {% for modalidade in todas_modalidades_list %}
+        <li><a href="/fichas/{{ modalidade.id }}/modalidade">{{ modalidade.modalidade_nome }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma Modalidade Cadastrada.</p>
+{% endif %}
+
+{% endblock %}
