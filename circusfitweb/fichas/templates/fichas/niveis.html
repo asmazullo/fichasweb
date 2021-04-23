@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Controle de Níveis </title>
+</head>
+<body>
+<h1>Lista de Níveis da Modalidade {{ mod_chose }}:</h1>
+<br>
+{% if todos_os_niveis %}
+    <ul>
+    {% for nivel in todos_os_niveis %}
+        {% if nivel.modalidade.id == modalidade_id %}
+        <li><a href="/fichas/{{ modalidade_id }}/modalidade">{{ nivel.nivel_nome }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum nível cadastrado.</p>
+{% endif %}
+
+
+</body>
+</html>
