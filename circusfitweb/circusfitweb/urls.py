@@ -25,6 +25,6 @@ def testeindex(request):
 urlpatterns = [
     path('fichas/', include('fichas.urls')),
     path('admin/', admin.site.urls),
-    path('', testeindex, name='index'),
+    path('', include('fichas.urls')),
 
 ]

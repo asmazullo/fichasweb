@@ -10,6 +10,14 @@ class Modalidade(models.Model):
     modalidade_nome = models.CharField(max_length=200)
     modalidade_pub_date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return self.modalidade_nome
+
+    class Meta:
+        verbose_name = 'Modalidade'
+        verbose_name_plural = 'Modalidades'
+        ordering =['modalidade_nome']
+
 
 class Nivel(models.Model):
 
@@ -18,6 +26,14 @@ class Nivel(models.Model):
     nivel_nome = models.CharField(max_length=200)
     nivel_pub_date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.modalidade} - {self.nivel_nome}'
+
+    ordering = ['modalidade','-nivel_ordem']
+
+    class Meta:
+        verbose_name = 'Nível'
+        verbose_name_plural = 'Níveis'
 
 class Bloco(models.Model):
 
@@ -25,6 +41,13 @@ class Bloco(models.Model):
     bloco_ordem = models.IntegerField(default=1000)
     bloco_nome = models.CharField(max_length=200)
     bloco_pub_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.nivel} - {self.bloco_nome}'
+
+    class Meta:
+        verbose_name = 'Bloco'
+        verbose_name_plural = 'Blocos'
 
 
 class Movimento(models.Model):
@@ -36,3 +59,11 @@ class Movimento(models.Model):
     movimento_nome = models.CharField(max_length=200)
     movimento_explicacao = models.TextField(default='')
     movimento_ordem = models.IntegerField(default=10000)
+    movimento_imagem= models.ImageField(upload_to='images', verbose_name='Foto', blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.bloco} - {self.movimento_nome}'
+
+    class Meta:
+        verbose_name = 'Movimento'
+        verbose_name_plural = 'Movimentos'
